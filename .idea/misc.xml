@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Projects/AndroidStudio/Sniply/app/src/main/res/drawable-v24/music_icon.xml" value="0.2985" />
         <entry key="..\:/Projects/AndroidStudio/Sniply/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
+        <entry key="..\:/Projects/AndroidStudio/Sniply/app/src/main/res/layout/activity_player.xml" value="0.36666666666666664" />
+        <entry key="..\:/Projects/AndroidStudio/Sniply/app/src/main/res/layout/song_name_layout.xml" value="0.18802083333333333" />
         <entry key="..\:/School/PMA/Sniply/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/petol/AndroidStudioProjects/Sniply/app/src/main/res/layout/activity_main.xml" value="0.264" />
       </map>
     </option>
   </component>
