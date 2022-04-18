@@ -15,6 +15,19 @@
         android:gravity="center"
         android:orientation="vertical">
 
+        <Button
+            android:id="@+id/moznosti"
+            android:layout_width="72dp"
+            android:layout_height="44dp"
+            android:text="+"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/favourite"
+            android:layout_width="72dp"
+            android:layout_height="wrap_content"
+            android:text="❤" />
+
         <TextView
             android:id="@+id/SongTxt"
             android:layout_width="wrap_content"
@@ -42,37 +55,36 @@
             android:layout_height="68dp">
 
             <SeekBar
+                android:id="@+id/SeekBar"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:id="@+id/SeekBar"
                 android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
                 android:layout_margin="20dp"
-                android:layout_marginBottom="40dp"/>
-
+                android:layout_marginBottom="40dp" />
 
 
             <TextView
+                android:id="@+id/TxtSongStart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/TxtSongStart"
-                android:layout_toLeftOf="@id/SeekBar"
-                android:layout_centerInParent="true"
                 android:layout_alignParentLeft="false"
-                android:singleLine="true"
+                android:layout_centerInParent="true"
                 android:layout_marginLeft="20dp"
+                android:layout_toLeftOf="@id/SeekBar"
+                android:singleLine="true"
                 android:text="0:00"
                 android:textSize="15dp" />
 
 
             <TextView
+                android:id="@+id/TxtSongEnd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/TxtSongEnd"
-                android:layout_toRightOf="@id/SeekBar"
-                android:layout_centerInParent="true"
                 android:layout_alignParentRight="false"
+                android:layout_centerInParent="true"
                 android:layout_marginRight="20dp"
+                android:layout_toRightOf="@id/SeekBar"
                 android:singleLine="true"
                 android:text="0:00"
                 android:textSize="15dp" />
@@ -90,47 +102,47 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="151dp"
+            android:layout_gravity="bottom">
 
             <Button
                 android:id="@+id/BtnPlay"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_centerHorizontal="true"
-                android:background="@drawable/pause_song_icon"/>
+                android:background="@drawable/pause_song_icon" />
 
             <Button
                 android:id="@+id/BtnNext"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="15dp"
-                android:background="@drawable/next_song_icon"
-                android:layout_toRightOf="@id/BtnPlay"/>
+                android:layout_toRightOf="@id/BtnPlay"
+                android:background="@drawable/next_song_icon" />
 
             <Button
                 android:id="@+id/BtnPrevious"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="15dp"
-                android:background="@drawable/previews_icon"
-                android:layout_toLeftOf="@id/BtnPlay"/>
+                android:layout_toLeftOf="@id/BtnPlay"
+                android:background="@drawable/previews_icon" />
 
             <Button
                 android:id="@+id/BtnFastForward"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/forward_icon"
-                android:layout_toRightOf="@id/BtnNext"/>
+                android:layout_toRightOf="@id/BtnNext"
+                android:background="@drawable/forward_icon" />
 
             <Button
                 android:id="@+id/BtnFastRewind"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/rewind_icon"
-                android:layout_toLeftOf="@id/BtnPrevious"/>
-
+                android:layout_toLeftOf="@id/BtnPrevious"
+                android:background="@drawable/rewind_icon" />
 
 
         </RelativeLayout>

@@ -9,10 +9,23 @@
     <ListView
         android:id="@+id/ListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="584dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="147dp"
         android:divider="@android:color/transparent"
-        android:padding="9dp"
-        android:dividerHeight="10sp"/>
+        android:dividerHeight="10sp"
+        android:padding="9dp" />
+
+    <Button
+        android:id="@+id/listButton"
+        android:layout_width="254dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="79dp"
+        android:layout_marginTop="51dp"
+        android:text="Zoznamy Skladieb" />
 
 
 </RelativeLayout>

@@ -1,83 +1,55 @@
-package com.example.sniply;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+package com.example.sniply.Activities;
 
 import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.database.Cursor;
-import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.sniply.Activities.ListActivity;
-import com.example.sniply.Activities.PlayerActivity;
+import com.example.sniply.R;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
-import com.karumi.dexter.listener.PermissionDeniedResponse;
-import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
-import com.karumi.dexter.listener.single.PermissionListener;
-
-
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+
+public class ListOpenedActivity extends AppCompatActivity {
 
 
+    TextView textView;
+    ArrayList<File> songList;
     ListView listView;
-    String[] items;
-    Button listButton;
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_song_list_opened);
 
-        //Assigning Address of the Android Materials
-        listView = (ListView) findViewById(R.id.ListView);
-        listButton = findViewById(R.id.listButton);
+        textView=findViewById(R.id.textView2);
+        listView= findViewById(R.id.listViewSongList);
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
 
-        listButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openSongList();
-            }
-        });
+        songList = (ArrayList) bundle.getIntegerArrayList("songlist");
 
-        //Calling Method for asking permission
         runTimePermission();
 
 
-    }
 
-    private void openSongList(){
 
-        Intent songListIntent = new Intent(this, ListActivity.class);
-        startActivity(songListIntent);
 
     }
 
@@ -104,40 +76,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-    public ArrayList<File> findSong(File file) {
-
-        //ArrayList to store all songs
-        ArrayList<File> arrayList = new ArrayList<>();
-        File[] files = file.listFiles();
-
-        for (File singleFile : files) {
-
-            //Adding the directory to arrayList if it is not hidden
-            if (singleFile.isDirectory() && !singleFile.isHidden()) {
-
-                arrayList.addAll(findSong(singleFile));
-
-            } else {
-                //Adding the single music file to ArrayList
-                if (singleFile.getName().endsWith(".mp3") || singleFile.getName().endsWith(".wav")) {
-                    arrayList.add(singleFile);
-                }
-            }
-        }
-
-        return arrayList;
-    }
-
     public void displaySong() {
 
-        final ArrayList<File> mySongs = findSong(Environment.getExternalStorageDirectory());
-        items = new String[mySongs.size()];
+        ArrayList<File> mySongs = songList;
 
-        //Adding all the music file without extensions to ArrayList
-        for (int i = 0; i < mySongs.size(); i++) {
-            items[i] = mySongs.get(i).getName().toString().replace(".mp3", "").replace(".wav", "");
-        }
 
         //Calling the adapter and setting it to ListView
         CustomAdapter customAdapter = new CustomAdapter();
@@ -163,10 +105,13 @@ public class MainActivity extends AppCompatActivity {
 
     class CustomAdapter extends BaseAdapter {
 
+        ArrayList<File> items = songList;
+
+
         @Override
         public int getCount() {
             //Returning the count of total songs in an ArrayList
-            return items.length;
+            return items.size();
         }
 
         @Override
@@ -186,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
             View view = getLayoutInflater().inflate(R.layout.song_name_layout, null);
             TextView txtSong = view.findViewById(R.id.SongName);
             txtSong.setSelected(true);
-            txtSong.setText(items[position]);
+            txtSong.setText(items.get(position).getName().toString().replace(".mp3", "").replace(".wav", ""));
             return view;
         }
     }
