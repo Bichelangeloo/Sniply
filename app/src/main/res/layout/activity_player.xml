@@ -15,6 +15,13 @@
         android:gravity="center"
         android:orientation="vertical">
 
+        <Button
+            android:id="@+id/moznosti"
+            android:layout_width="72dp"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textSize="34sp" />
+
         <TextView
             android:id="@+id/SongTxt"
             android:layout_width="wrap_content"

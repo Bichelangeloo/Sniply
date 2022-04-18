@@ -1,21 +1,32 @@
 package com.example.sniply.Activities;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.TranslateAnimation;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.PopupWindow;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,19 +34,24 @@ import android.widget.Toast;
 
 import com.example.sniply.R;
 
+import org.xmlpull.v1.XmlPullParser;
+
 import java.io.File;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.Set;
 
 public class PlayerActivity extends AppCompatActivity {
 
-    Button btnPlay, btnNext, btnPrevious, btnFastForward, btnFastBackWard;
+    Button btnPlay, btnNext, btnPrevious, btnFastForward, btnFastBackWard,moznosti;
     TextView txtSongName, txtSongStart, txtSongEnd;
     SeekBar seekMusicBar;
 
 
 
     ImageView imageView;
-
+    ListView listView;
+    TextView listName;
 
     String songName;
     public static final String EXTRA_NAME = "song_name";
@@ -43,8 +59,11 @@ public class PlayerActivity extends AppCompatActivity {
     int position;
 
     ArrayList<File> mySongs;
+    LinkedHashMap<String,ArrayList<File>> songList;
 
     Thread updateSeekBar;
+    Uri uri;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +76,11 @@ public class PlayerActivity extends AppCompatActivity {
         btnPrevious = (Button) findViewById(R.id.BtnPrevious);
         btnFastForward = (Button) findViewById(R.id.BtnFastForward);
         btnFastBackWard = (Button) findViewById(R.id.BtnFastRewind);
+        moznosti= findViewById(R.id.moznosti);
+        songList = ListActivity.songList;
+        listName = findViewById(R.id.listName);
 
+        listView = findViewById(R.id.listViewPopUp);
 
         txtSongName = (TextView) findViewById(R.id.SongTxt);
         txtSongStart = (TextView) findViewById(R.id.TxtSongStart);
@@ -67,6 +90,12 @@ public class PlayerActivity extends AppCompatActivity {
 
 
         imageView = (ImageView) findViewById(R.id.MusicImage);
+
+
+
+
+
+
 
         //Checking if any song playing or not
         if (mediaPlayer != null) {
@@ -85,8 +114,9 @@ public class PlayerActivity extends AppCompatActivity {
         position = bundle.getInt("pos");
         txtSongName.setSelected(true);
 
+
         //Extracting the fileName form the ArrayList
-        Uri uri = Uri.parse(mySongs.get(position).toString());
+        uri = Uri.parse(mySongs.get(position).toString());
         songName = mySongs.get(position).getName();
         txtSongName.setText(songName);
 
@@ -124,6 +154,11 @@ public class PlayerActivity extends AppCompatActivity {
 
             }
         };
+
+
+
+
+
 
 
         //Setting the seekbar's max progress to the maximum duration of the media file
@@ -170,6 +205,7 @@ public class PlayerActivity extends AppCompatActivity {
 
             }
         }, delay);
+
 
 
         //Implementing OnClickListener for Play and Pause Button
@@ -324,7 +360,27 @@ public class PlayerActivity extends AppCompatActivity {
             }
         });
 
+
+        moznosti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                openSongList();
+
+            }
+        });
+
     }
+
+private void openSongList(){
+
+        Intent songListIntent = new Intent(this, addToListActivity.class);
+        songListIntent.putExtra("song",uri.toString());
+        startActivity(songListIntent);
+
+
+}
+
 
 
     //Method to create animation for imageView
@@ -374,4 +430,8 @@ public class PlayerActivity extends AppCompatActivity {
         super.onDestroy();
 
     }
+
+
+
+
 }

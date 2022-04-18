@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Sniply">
         <activity android:name=".Activities.PlayerActivity"></activity>
+        <activity android:name=".Activities.ListActivity"></activity>
+        <activity android:name=".Activities.ListOpenedActivity"></activity>
+        <activity android:name=".Activities.addToListActivity"></activity>
         <activity android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
