@@ -105,26 +105,38 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
+
     public ArrayList<File> findSong(File file) {
 
         //ArrayList to store all songs
         ArrayList<File> arrayList = new ArrayList<>();
+
         File[] files = file.listFiles();
 
-        for (File singleFile : files) {
 
-            //Adding the directory to arrayList if it is not hidden
-            if (singleFile.isDirectory() && !singleFile.isHidden()) {
+try {
+    for (File singleFile : files) {
 
-                arrayList.addAll(findSong(singleFile));
+        //Adding the directory to arrayList if it is not hidden
+        if (singleFile.isDirectory() && !singleFile.isHidden()) {
 
-            } else {
-                //Adding the single music file to ArrayList
-                if (singleFile.getName().endsWith(".mp3") || singleFile.getName().endsWith(".wav")) {
-                    arrayList.add(singleFile);
-                }
+            arrayList.addAll(findSong(singleFile));
+
+        } else {
+            //Adding the single music file to ArrayList
+            if (singleFile.getName().endsWith(".mp3") || singleFile.getName().endsWith(".wav")) {
+                arrayList.add(singleFile);
             }
         }
+    }
+}catch (Exception e){
+
+    System.out.println("0 songov");
+
+
+}
+
 
         return arrayList;
     }
