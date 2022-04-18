@@ -56,6 +56,7 @@ public class ListActivity extends AppCompatActivity {
     ArrayList<File> songs = findSong(Environment.getExternalStorageDirectory());
     ArrayList<File> tmp = new ArrayList<>();
    public static LinkedHashMap<String,ArrayList<File>> songList = new LinkedHashMap<>();
+   ArrayList<File> favouritess = new ArrayList<>();
 
 
 
@@ -77,7 +78,11 @@ public class ListActivity extends AppCompatActivity {
 
 
 
+
         SharedPreferences sh = getSharedPreferences("SniplySharedPreferences",MODE_PRIVATE);
+
+
+        songList.put("favourites",favouritess);
 
 
 
@@ -108,6 +113,8 @@ public class ListActivity extends AppCompatActivity {
         listView.setAdapter(customAdapter);
 
 
+
+
         System.out.println(songList.size()+" song list size");
         System.out.println(songList.get("test").get(0).getName());
         System.out.println(songs.size());
@@ -126,10 +133,31 @@ public class ListActivity extends AppCompatActivity {
             }
         });
 
-
-
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
+
+
+try {
+    Uri uriFav = (Uri) bundle.get("songFav");
+    songList.get("favourites").add(new File(uriFav.getPath()));
+}catch (Exception e){
+
+    System.out.println("0 favoritov");
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         try {

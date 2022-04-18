@@ -43,7 +43,7 @@ import java.util.Set;
 
 public class PlayerActivity extends AppCompatActivity {
 
-    Button btnPlay, btnNext, btnPrevious, btnFastForward, btnFastBackWard,moznosti;
+    Button btnPlay, btnNext, btnPrevious, btnFastForward, btnFastBackWard,moznosti,favourites;
     TextView txtSongName, txtSongStart, txtSongEnd;
     SeekBar seekMusicBar;
 
@@ -77,6 +77,7 @@ public class PlayerActivity extends AppCompatActivity {
         btnFastForward = (Button) findViewById(R.id.BtnFastForward);
         btnFastBackWard = (Button) findViewById(R.id.BtnFastRewind);
         moznosti= findViewById(R.id.moznosti);
+        favourites=findViewById(R.id.favourite);
         songList = ListActivity.songList;
         listName = findViewById(R.id.listName);
 
@@ -370,6 +371,17 @@ public class PlayerActivity extends AppCompatActivity {
             }
         });
 
+        favourites.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                Toast.makeText(getApplicationContext(),"Pridane do oblubenych",Toast.LENGTH_SHORT).show();
+                addToFav();
+            }
+        });
+
+
     }
 
 private void openSongList(){
@@ -380,6 +392,17 @@ private void openSongList(){
 
 
 }
+
+    private void addToFav(){
+
+        Intent songListIntent = new Intent(this, ListActivity.class);
+        songListIntent.putExtra("songFav",uri);
+        System.out.println("URIIIIIII FAVOUTRITES  "+uri.toString());
+
+        startActivity(songListIntent);
+
+
+    }
 
 
 
