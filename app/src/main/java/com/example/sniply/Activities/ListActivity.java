@@ -89,24 +89,30 @@ public class ListActivity extends AppCompatActivity {
         Set keySet = sh.getStringSet("keySet",null);
 
         System.out.println("KEYSET:   "+keySet);
+try {
+    for (Object key: keySet) {
 
-        for (Object key: keySet) {
+        Set tmp = sh.getStringSet(key.toString(),null);
+        ArrayList<File> tmp2 = new ArrayList<>();
 
-            Set tmp = sh.getStringSet(key.toString(),null);
-            ArrayList<File> tmp2 = new ArrayList<>();
+        System.out.println(" FIIIIIIIIIILEEEEEEEEEEEEES   "+sh.getStringSet(key.toString(),null));
+        for (Object file:tmp) {
 
-            System.out.println(" FIIIIIIIIIILEEEEEEEEEEEEES   "+sh.getStringSet(key.toString(),null));
-            for (Object file:tmp) {
+            Uri uri = Uri.parse(file.toString());
+            tmp2.add(new File(uri.getPath()));
 
-                Uri uri = Uri.parse(file.toString());
-                tmp2.add(new File(uri.getPath()));
-
-            }
+        }
 
         songList.put(key.toString(),tmp2);
 
 
-        }
+    }
+}catch (Exception e){
+
+    System.out.println("0 songov");
+
+}
+
 
 
         CustomAdapter customAdapter = new CustomAdapter(getApplicationContext(), songList);
@@ -115,10 +121,6 @@ public class ListActivity extends AppCompatActivity {
 
 
 
-        System.out.println(songList.size()+" song list size");
-        System.out.println(songList.get("test").get(0).getName());
-        System.out.println(songs.size());
-        System.out.println(listView.getItemAtPosition(0).toString());
 
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -187,12 +189,19 @@ try {
         Set keySet = sh.getStringSet("keySet",null);
 
         System.out.println("KEYSET:   "+keySet);
+try {
+    for (Object key: keySet) {
 
-        for (Object key: keySet) {
+        System.out.println(" FIIIIIIIIIILEEEEEEEEEEEEES   "+sh.getStringSet(key.toString(),null));
 
-            System.out.println(" FIIIIIIIIIILEEEEEEEEEEEEES   "+sh.getStringSet(key.toString(),null));
+    }
+}catch (Exception e){
 
-        }
+    System.out.println("0 songov");
+
+
+}
+
 
 
 
@@ -251,6 +260,10 @@ try {
                     public void onClick(DialogInterface dialog, int which) {
                         String nazov = String.valueOf(taskEditText.getText());
                         createSongList(nazov);
+                        finish();
+                        overridePendingTransition(0, 0);
+                        startActivity(getIntent());
+                        overridePendingTransition(0, 0);
                     }
                 })
                 .setNegativeButton("Cancel", null)
@@ -312,21 +325,27 @@ try {
         //ArrayList to store all songs
         ArrayList<File> arrayList = new ArrayList<>();
         File[] files = file.listFiles();
+try {
+    for (File singleFile : files) {
 
-        for (File singleFile : files) {
+        //Adding the directory to arrayList if it is not hidden
+        if (singleFile.isDirectory() && !singleFile.isHidden()) {
 
-            //Adding the directory to arrayList if it is not hidden
-            if (singleFile.isDirectory() && !singleFile.isHidden()) {
+            arrayList.addAll(findSong(singleFile));
 
-                arrayList.addAll(findSong(singleFile));
-
-            } else {
-                //Adding the single music file to ArrayList
-                if (singleFile.getName().endsWith(".mp3") || singleFile.getName().endsWith(".wav")) {
-                    arrayList.add(singleFile);
-                }
+        } else {
+            //Adding the single music file to ArrayList
+            if (singleFile.getName().endsWith(".mp3") || singleFile.getName().endsWith(".wav")) {
+                arrayList.add(singleFile);
             }
         }
+    }
+}catch (Exception e){
+
+
+    System.out.println("0 songov");
+}
+
 
         return arrayList;
     }
