@@ -152,6 +152,9 @@ try {
 try {
     Uri uriFav = (Uri) bundle.get("songFav");
     songList.get("Oblubene").add(new File(uriFav.getPath()));
+
+
+
 }catch (Exception e){
 
     System.out.println("0 favoritov");

@@ -308,8 +308,9 @@ private void openSongList(){
 
     private void addToFav(){
         Intent songListIntent = new Intent(this, ListActivity.class);
-        songListIntent.putExtra("songFav",uri);
-        System.out.println("URIIIIIII FAVOUTRITES  "+uri.toString());
+        Uri uriFav = Uri.parse(mySongs.get(position).toString());
+        songListIntent.putExtra("songFav",uriFav);
+        System.out.println("URIIIIIII FAVOUTRITES  "+uriFav.toString());
 
         startActivity(songListIntent);
     }
