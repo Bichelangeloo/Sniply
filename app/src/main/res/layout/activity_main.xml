@@ -6,6 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="146dp"
+        android:background="@color/lime" />
+
     <ListView
         android:id="@+id/ListView"
         android:layout_width="match_parent"
@@ -17,15 +23,27 @@
         android:padding="9dp" />
 
     <Button
+        android:backgroundTint="@color/black"
         android:id="@+id/listButton"
-        android:layout_width="254dp"
+        android:layout_width="190dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="79dp"
-        android:layout_marginTop="51dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="50dp"
         android:text="Zoznamy Skladieb" />
+
+    <Button
+        android:id="@+id/exitButton"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/black"
+        android:text="EXIT" />
 
 
 </RelativeLayout>

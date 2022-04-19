@@ -46,6 +46,7 @@ public class ListActivity extends AppCompatActivity {
 
      ListView listView;
      Button newSongListButton;
+     Button backButton;
      Button createNewSongListButton;
      EditText newSongListName;
      SharedPreferences sharedPreferences;
@@ -77,12 +78,21 @@ public class ListActivity extends AppCompatActivity {
         });
 
 
+        backButton = findViewById(R.id.backButton);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
 
 
         SharedPreferences sh = getSharedPreferences("SniplySharedPreferences",MODE_PRIVATE);
 
 
-        songList.put("favourites",favouritess);
+        songList.put("Oblubene",favouritess);
 
 
 
@@ -141,7 +151,7 @@ try {
 
 try {
     Uri uriFav = (Uri) bundle.get("songFav");
-    songList.get("favourites").add(new File(uriFav.getPath()));
+    songList.get("Oblubene").add(new File(uriFav.getPath()));
 }catch (Exception e){
 
     System.out.println("0 favoritov");

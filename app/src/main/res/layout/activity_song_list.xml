@@ -1,24 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="146dp"
+        android:background="@color/lime" />
+
     <Button
         android:id="@+id/newSongList"
-        android:layout_width="213dp"
+        android:layout_width="188dp"
         android:layout_height="62dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="44dp"
         android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/black"
         android:text="Vytvorit novy zoznam skladieb" />
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="181dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="12dp"
+        android:backgroundTint="@color/black"
+        android:text="NASPAT" />
 
     <ListView
         android:id="@+id/simpleListView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="584dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
         android:divider="@color/material_blue_grey_800"
         android:dividerHeight="1dp"
         android:footerDividersEnabled="false" />
 
-</LinearLayout>
+</RelativeLayout>

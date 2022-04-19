@@ -47,7 +47,7 @@
             android:layout_width="250dp"
             android:layout_height="250dp"
             android:layout_marginBottom="8dp"
-            android:src="@drawable/music_icon" />
+            android:src="@drawable/hudbaikonka" />
 
 
         <RelativeLayout
@@ -128,21 +128,21 @@
                 android:layout_toLeftOf="@id/BtnPlay"
                 android:background="@drawable/previews_icon" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/BtnFastForward"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:layout_toRightOf="@id/BtnNext"
-                android:background="@drawable/forward_icon" />
+                android:background="@drawable/forwardtime"/>
 
-            <Button
+            <ImageButton
                 android:id="@+id/BtnFastRewind"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:layout_toLeftOf="@id/BtnPrevious"
-                android:background="@drawable/rewind_icon" />
+                android:background="@drawable/rewindtime"/>
 
 
         </RelativeLayout>

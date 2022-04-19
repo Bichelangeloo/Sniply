@@ -2,6 +2,7 @@ package com.example.sniply;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -51,11 +52,13 @@ public class MainActivity extends AppCompatActivity {
     ListView listView;
     String[] items;
     Button listButton;
+    Button exitButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         //Assigning Address of the Android Materials
         listView = (ListView) findViewById(R.id.ListView);
@@ -67,6 +70,19 @@ public class MainActivity extends AppCompatActivity {
                 openSongList();
             }
         });
+
+
+        exitButton = findViewById(R.id.exitButton);
+
+        exitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+                System.exit(0);
+            }
+        });
+
+
 
         //Calling Method for asking permission
         runTimePermission();
