@@ -75,6 +75,7 @@ public class addToListActivity extends AppCompatActivity {
                 intent.putExtra("song",uri);
                 intent.putExtra("key",key);
                 startActivity(intent);
+                finish();
 
 
             }

@@ -1,5 +1,6 @@
 package com.example.sniply.Activities;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -28,6 +29,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.sniply.MainActivity;
 import com.example.sniply.R;
 
 import java.io.File;
@@ -58,6 +60,7 @@ public class ListActivity extends AppCompatActivity {
     ArrayList<File> tmp = new ArrayList<>();
    public static LinkedHashMap<String,ArrayList<File>> songList = new LinkedHashMap<>();
    ArrayList<File> favouritess = new ArrayList<>();
+   ArrayList<File> najprehra = new ArrayList<>();
 
 
 
@@ -83,7 +86,11 @@ public class ListActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
                 finish();
+
             }
         });
 
@@ -93,6 +100,7 @@ public class ListActivity extends AppCompatActivity {
 
 
         songList.put("Oblubene",favouritess);
+        songList.put("Najprehravanejsie",najprehra);
 
 
 
@@ -123,15 +131,8 @@ try {
 
 }
 
-
-
         CustomAdapter customAdapter = new CustomAdapter(getApplicationContext(), songList);
         listView.setAdapter(customAdapter);
-
-
-
-
-
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -139,7 +140,11 @@ try {
 
                 Intent intent = new Intent(getApplicationContext(),ListOpenedActivity.class);
                 intent.putExtra("songlist",songList.get(listView.getItemAtPosition(i).toString()));
+                intent.putExtra("listname",listView.getItemAtPosition(i).toString());
+                intent.putExtra("allsongs",songs);
                 startActivity(intent);
+
+
 
 
             }
@@ -159,6 +164,39 @@ try {
 
     System.out.println("0 favoritov");
 
+
+}
+
+
+
+
+try {
+
+    String nazovListu = bundle.getString("listToDelete");
+    System.out.println(nazovListu+"         NAAAAAZOVOVOV LISTU  UUU");
+    if (nazovListu.equals("Oblubene")){
+
+        Toast.makeText(getApplicationContext(),"Tento list sa nemoze odstranit",Toast.LENGTH_LONG).show();
+
+    }else {
+
+        System.out.println(nazovListu);
+        songList.remove(nazovListu);
+        System.out.println(songList.keySet());
+        bundle.remove("listToDelete");
+
+
+
+
+
+
+    }
+
+
+
+}catch (Exception e){
+
+    System.out.println("0 listov na odstranenie");
 
 }
 

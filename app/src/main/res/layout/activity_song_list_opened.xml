@@ -6,20 +6,37 @@
     <ListView
         android:id="@+id/listViewSongList"
         android:layout_width="match_parent"
-        android:layout_height="639dp"
+        android:layout_height="519dp"
         android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="119dp" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/nazovListu"
+        android:layout_width="match_parent"
+        android:layout_height="94dp"
         android:layout_above="@+id/listViewSongList"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="176dp"
-        android:layout_marginTop="38dp"
-        android:layout_marginBottom="36dp"
-        android:text="TextView" />
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="-1dp"
+        android:gravity="center"
+        android:text="Nazov"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/odstranit"
+        android:layout_width="74dp"
+        android:layout_height="79dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="167dp"
+        android:layout_marginBottom="24dp"
+        android:background="@android:color/transparent"
+
+        android:text="🗑"
+        android:textSize="34sp" />
 </RelativeLayout>

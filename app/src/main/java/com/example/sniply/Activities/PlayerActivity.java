@@ -7,6 +7,7 @@ import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -54,6 +55,7 @@ public class PlayerActivity extends AppCompatActivity {
     LinkedHashMap<String,ArrayList<File>> songList;
     Thread updateSeekBar;
     Uri uri;
+    int pocetPrehrani=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +78,11 @@ public class PlayerActivity extends AppCompatActivity {
         txtSongEnd = (TextView) findViewById(R.id.TxtSongEnd);
         seekMusicBar = (SeekBar) findViewById(R.id.SeekBar);
         imageView = (ImageView) findViewById(R.id.MusicImage);
+        SharedPreferences sh = getSharedPreferences("SniplySharedPreferences",MODE_PRIVATE);
+        SharedPreferences.Editor myEdit= sh.edit();
+
+
+
 
 
         //kontrola ci sa da pesnicka prehrat
@@ -92,6 +99,8 @@ public class PlayerActivity extends AppCompatActivity {
 
         mySongs = (ArrayList) bundle.getIntegerArrayList("songs");
         String sName = intent.getStringExtra("songname");
+
+
         position = bundle.getInt("pos");
         txtSongName.setSelected(true);
 
@@ -297,6 +306,17 @@ public class PlayerActivity extends AppCompatActivity {
                 addToFav();
             }
         });
+
+        pocetPrehrani = sh.getInt(mySongs.get(position).getName(),0);
+
+        myEdit.putInt(mySongs.get(position).getName(),pocetPrehrani+1);
+
+
+        System.out.println(pocetPrehrani);
+
+        myEdit.apply();
+
+
     }
 
 private void openSongList(){
