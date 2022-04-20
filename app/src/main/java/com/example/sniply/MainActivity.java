@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        //Assigning Address of the Android Materials
+        //pridelenie adresy android materialov
         listView = (ListView) findViewById(R.id.ListView);
         listButton = findViewById(R.id.listButton);
 
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        //Calling Method for asking permission
+        //volanie metody
         runTimePermission();
 
 
@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    //Method To Ask access for the external storeage
+    //metoda na poziadanie pristupu k externemu ulozisku
     public void runTimePermission() {
         Dexter.withContext(getApplicationContext())
                 .withPermissions(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO)
@@ -107,14 +107,14 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onPermissionsChecked(MultiplePermissionsReport multiplePermissionsReport) {
 
-                        //Method To Display songs
+                        //metoda na ukazovanie pesniciek
                         displaySong();
                     }
 
                     @Override
                     public void onPermissionRationaleShouldBeShown(List<PermissionRequest> list, PermissionToken permissionToken) {
 
-                        //Keeps asking for external storage permission
+                        //stale ziada pristup k externemu ulozisku
                         permissionToken.continuePermissionRequest();
                     }
                 }).check();
@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
 
     public ArrayList<File> findSong(File file) {
 
-        //ArrayList to store all songs
+        //ArrayList na ulozenie vsetkych pesniciek
         ArrayList<File> arrayList = new ArrayList<>();
 
         File[] files = file.listFiles();
@@ -135,13 +135,13 @@ public class MainActivity extends AppCompatActivity {
 try {
     for (File singleFile : files) {
 
-        //Adding the directory to arrayList if it is not hidden
+        //pridanie priecunku do arrayList ak nieje skryty
         if (singleFile.isDirectory() && !singleFile.isHidden()) {
 
             arrayList.addAll(findSong(singleFile));
 
         } else {
-            //Adding the single music file to ArrayList
+            //pridanie samostatnej pesnicky do arrayList
             if (singleFile.getName().endsWith(".mp3") || singleFile.getName().endsWith(".wav")) {
                 arrayList.add(singleFile);
             }
@@ -163,23 +163,23 @@ try {
         final ArrayList<File> mySongs = findSong(Environment.getExternalStorageDirectory());
         items = new String[mySongs.size()];
 
-        //Adding all the music file without extensions to ArrayList
+        //pridanie vsetkych pesniciek bez koncoviek do arrayList
         for (int i = 0; i < mySongs.size(); i++) {
             items[i] = mySongs.get(i).getName().toString().replace(".mp3", "").replace(".wav", "");
         }
 
-        //Calling the adapter and setting it to ListView
+        // volanie adaptera a setujeme ho na ListView
         CustomAdapter customAdapter = new CustomAdapter();
         listView.setAdapter(customAdapter);
 
-        //Implementing onClickListener for ListView
+        //implementacia onClickListener pre ListView
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 String songName = (String) listView.getItemAtPosition(i);
 
-                //Calling the next intent and sending the Required Details to play the songs
+                //volanie dalsieho intentu a posielanie vyzadovanych detailov na hranie pesniciek
                 Intent intent = new Intent(getApplicationContext(), PlayerActivity.class);
                 intent.putExtra("songs", mySongs);
                 intent.putExtra("songname", songName);
@@ -194,7 +194,7 @@ try {
 
         @Override
         public int getCount() {
-            //Returning the count of total songs in an ArrayList
+            //vracia sa pocet pesniciek v ArrayList
             return items.length;
         }
 
@@ -211,7 +211,7 @@ try {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
 
-            //Inflating all the single music files in a Layout File
+
             View view = getLayoutInflater().inflate(R.layout.song_name_layout, null);
             TextView txtSong = view.findViewById(R.id.SongName);
             txtSong.setSelected(true);

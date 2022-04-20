@@ -335,7 +335,7 @@ private void openSongList(){
         startActivity(songListIntent);
     }
 
-    //Method to create animation for imageView
+    //metoda na vytvorenie animacie pre imageView
     public void startAnimation(View view, Float degree) {
         ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(imageView, "rotation", 0f, degree);
         objectAnimator.setDuration(1000);
@@ -345,7 +345,7 @@ private void openSongList(){
         animatorSet.start();
     }
 
-    //Preparing the Time format for setting to textView
+    //pripravenie casoveho formatu pre TextView
     public String createDuration(int duration) {
 
         String time = "";
@@ -363,13 +363,13 @@ private void openSongList(){
         return time;
     }
 
-    //Method To extract the duration of the current media and setting it to TextView
+    //metoda na ziskanie momentalneho casu media a nastavenie ho na TextView
     public void songEndTime() {
         String endTime = createDuration(mediaPlayer.getDuration());
         txtSongEnd.setText(endTime);
     }
 
-    //Releasing the BarVisualizer on Closing the Activity
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
