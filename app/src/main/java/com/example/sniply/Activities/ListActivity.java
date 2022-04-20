@@ -39,6 +39,7 @@ import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
@@ -156,7 +157,7 @@ try {
 
 try {
     Uri uriFav = (Uri) bundle.get("songFav");
-    songList.get("Oblubene").add(new File(uriFav.getPath()));
+    Objects.requireNonNull(songList.get("Oblubene")).add(new File(uriFav.getPath()));
 
 
 
@@ -174,7 +175,7 @@ try {
 
     String nazovListu = bundle.getString("listToDelete");
     System.out.println(nazovListu+"         NAAAAAZOVOVOV LISTU  UUU");
-    if (nazovListu.equals("Oblubene")){
+    if (nazovListu.equals("Oblubene")||nazovListu.equals("Najprehravanejsie")){
 
         Toast.makeText(getApplicationContext(),"Tento list sa nemoze odstranit",Toast.LENGTH_LONG).show();
 

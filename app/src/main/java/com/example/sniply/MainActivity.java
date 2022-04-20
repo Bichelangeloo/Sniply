@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+
         //Assigning Address of the Android Materials
         listView = (ListView) findViewById(R.id.ListView);
         listButton = findViewById(R.id.listButton);
