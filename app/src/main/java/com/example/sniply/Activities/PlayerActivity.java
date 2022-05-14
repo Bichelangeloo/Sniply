@@ -308,6 +308,15 @@ public class PlayerActivity extends AppCompatActivity {
             }
         });
 
+        equalizer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                equalizer();
+
+            }
+        });
+
         pocetPrehrani = sh.getInt(mySongs.get(position).getName(),0);
 
         myEdit.putInt(mySongs.get(position).getName(),pocetPrehrani+1);
@@ -323,7 +332,8 @@ public class PlayerActivity extends AppCompatActivity {
 
     private void  equalizer(){
 
-
+            Intent equalizerIntent = new Intent(this,EqualizerActivity.class);
+            startActivity(equalizerIntent);
 
 
     }

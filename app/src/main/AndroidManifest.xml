@@ -17,6 +17,7 @@
         <activity android:name=".Activities.ListActivity" />
         <activity android:name=".Activities.ListOpenedActivity" />
         <activity android:name=".Activities.addToListActivity" />
+        <activity android:name=".Activities.EqualizerActivity"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"/>
