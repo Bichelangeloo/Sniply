@@ -14,23 +14,37 @@
 
         <Button
             android:id="@+id/moznosti"
-            android:layout_width="101dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="+"
             android:textSize="20sp" />
 
         <Button
             android:id="@+id/favourite"
-            android:layout_width="192dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="❤" />
 
         <Button
             android:id="@+id/timeButton"
-            android:layout_width="99dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="⏰" />
+
+        <Button
+            android:id="@+id/snipButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="✂" />
+
+        <Button
+            android:id="@+id/equalizerButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="🎛" />
     </LinearLayout>
 
     <LinearLayout

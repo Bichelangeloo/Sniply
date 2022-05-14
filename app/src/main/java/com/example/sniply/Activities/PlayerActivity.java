@@ -40,7 +40,7 @@ import java.util.Set;
 
 public class PlayerActivity extends AppCompatActivity {
 
-    Button btnPlay, btnNext, btnPrevious, moznosti,favourites;
+    Button btnPlay, btnNext, btnPrevious, moznosti,favourites,equalizer;
     ImageButton btnFastForward,btnFastBackWard;
     TextView txtSongName, txtSongStart, txtSongEnd;
     SeekBar seekMusicBar;
@@ -70,6 +70,7 @@ public class PlayerActivity extends AppCompatActivity {
         btnFastBackWard = (ImageButton) findViewById(R.id.BtnFastRewind);
         moznosti= findViewById(R.id.moznosti);
         favourites=findViewById(R.id.favourite);
+        equalizer =findViewById(R.id.equalizerButton);
         songList = ListActivity.songList;
         listName = findViewById(R.id.listName);
         listView = findViewById(R.id.listViewPopUp);
@@ -315,6 +316,14 @@ public class PlayerActivity extends AppCompatActivity {
         System.out.println(pocetPrehrani);
 
         myEdit.apply();
+
+
+    }
+
+
+    private void  equalizer(){
+
+
 
 
     }
