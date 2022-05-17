@@ -12,9 +12,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/android_Audio_Cuttermaster" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/cutter" />
-            <option value="$PROJECT_DIR$/ringroid" />
-            <option value="$PROJECT_DIR$/trimmer" />
+            <option value="$PROJECT_DIR$/ringdroid" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

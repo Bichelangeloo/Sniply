@@ -35,6 +35,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
 
     implementation 'com.github.bullheadandplato:AndroidEqualizer:2.2'
+    implementation project(':ringdroid')
 
 
     testImplementation 'junit:junit:4.13.2'

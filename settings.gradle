@@ -20,9 +20,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "Sniply"
 include ':app'
-include ':trimmer'
 include ':android_Audio_Cuttermaster'
 include ':android_Audio_Cuttermaster'
-include ':android_Audio_Cuttermaster'
-include ':cutter'
-include ':ringroid'
+include ':ringdroid'

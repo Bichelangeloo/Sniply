@@ -60,7 +60,7 @@ public class ListActivity extends AppCompatActivity {
     ArrayList<File> songs = findSong(Environment.getExternalStorageDirectory());
     ArrayList<File> tmp = new ArrayList<>();
    public static LinkedHashMap<String,ArrayList<File>> songList = new LinkedHashMap<>();
-   ArrayList<File> favouritess = new ArrayList<>();
+   public static ArrayList<File> favouritess = new ArrayList<>();
    ArrayList<File> najprehra = new ArrayList<>();
 
 
