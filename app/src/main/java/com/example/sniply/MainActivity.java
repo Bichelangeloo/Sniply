@@ -61,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
         //pridelenie adresy android materialov
         listView = (ListView) findViewById(R.id.ListView);
         listButton = findViewById(R.id.listButton);
