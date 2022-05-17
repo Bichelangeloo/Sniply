@@ -119,7 +119,7 @@
     <item name="android:background">#666677</item>
   </style>
     <style name="ToolbarBackground">
-    <item name="android:background">#222233</item>
+    <item name="android:background">#92ff00</item>
   </style>
     <style name="VerticalDividerForList">
     <item name="android:layout_width">1px</item>

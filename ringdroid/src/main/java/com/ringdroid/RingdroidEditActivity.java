@@ -18,10 +18,12 @@ package com.ringdroid;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.media.RingtoneManager;
@@ -41,6 +43,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -49,9 +52,15 @@ import android.widget.Toast;
 import com.ringdroid.soundfile.SoundFile;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.StringWriter;
 import java.io.PrintWriter;
 import java.io.RandomAccessFile;
+import java.net.URI;
 
 /**
  * The activity for the Ringdroid main editor window.  Keeps track of
@@ -117,10 +126,12 @@ public class RingdroidEditActivity extends Activity
     private int mMarkerRightInset;
     private int mMarkerTopOffset;
     private int mMarkerBottomOffset;
+    Button action_save_button;
 
     private Thread mLoadSoundFileThread;
     private Thread mRecordAudioThread;
     private Thread mSaveSoundFileThread;
+    SharedPreferences sh;
 
     // Result codes
     private static final int REQUEST_CODE_CHOOSE_CONTACT = 1;
@@ -150,7 +161,9 @@ public class RingdroidEditActivity extends Activity
         mRecordAudioThread = null;
         mSaveSoundFileThread = null;
 
+
         Intent intent = getIntent();
+        sh = getSharedPreferences("SniplySharedPreferences",MODE_PRIVATE);
 
         // If the Ringdroid media select activity was launched via a
         // GET_CONTENT intent, then we shouldn't display a "saved"
@@ -269,7 +282,7 @@ public class RingdroidEditActivity extends Activity
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         super.onPrepareOptionsMenu(menu);
-        menu.findItem(R.id.action_save).setVisible(true);
+        menu.findItem(R.id.action_save_button).setVisible(true);
         menu.findItem(R.id.action_reset).setVisible(true);
         menu.findItem(R.id.action_about).setVisible(true);
         return true;
@@ -277,21 +290,20 @@ public class RingdroidEditActivity extends Activity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-        case R.id.action_save:
+        int itemId = item.getItemId();
+        if (itemId == R.id.action_save_button) {
             onSave();
             return true;
-        case R.id.action_reset:
+        } else if (itemId == R.id.action_reset) {
             resetPositions();
             mOffsetGoal = 0;
             updateDisplay();
             return true;
-        case R.id.action_about:
+        } else if (itemId == R.id.action_about) {
             onAbout(this);
             return true;
-        default:
-            return false;
         }
+        return false;
     }
 
     @Override
@@ -551,6 +563,16 @@ public class RingdroidEditActivity extends Activity
         mRewindButton.setOnClickListener(mRewindListener);
         mFfwdButton = (ImageButton)findViewById(R.id.ffwd);
         mFfwdButton.setOnClickListener(mFfwdListener);
+        action_save_button= (Button) findViewById(R.id.action_save_button);
+        action_save_button.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                onSave();
+
+            }
+        });
+
 
         TextView markStartButton = (TextView) findViewById(R.id.mark_start);
         markStartButton.setOnClickListener(mMarkStartListener);
@@ -1225,7 +1247,7 @@ public class RingdroidEditActivity extends Activity
         mSaveSoundFileThread = new Thread() {
             public void run() {
                 // Try AAC first.
-                String outPath = makeRingtoneFilename(title, ".m4a");
+                String outPath = makeRingtoneFilename(title, ".wav");
                 if (outPath == null) {
                     Runnable runnable = new Runnable() {
                         public void run() {
@@ -1236,10 +1258,33 @@ public class RingdroidEditActivity extends Activity
                     return;
                 }
                 File outFile = new File(outPath);
+
+
+
+
+
+
+
+
                 Boolean fallbackToWAV = false;
                 try {
                     // Write the new file
-                    mSoundFile.WriteFile(outFile,  startFrame, endFrame - startFrame);
+                    mSoundFile.WriteWAVFile(outFile,  startFrame, endFrame - startFrame);
+
+
+
+
+                    Intent intent = getIntent();
+                    Uri uri = intent.getData();
+                    assert uri != null;
+                    moveFile(outPath,outPath, "/storage/emulated/0/Samsung/Music");
+
+                    System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+                    System.out.println(outPath);
+                    System.out.println(mSoundFile.toString());
+                    System.out.println(uri.getPath());
+
+
                 } catch (Exception e) {
                     // log the error and try to create a .wav file instead
                     if (outFile.exists()) {
@@ -1368,8 +1413,8 @@ public class RingdroidEditActivity extends Activity
 
         // Create the database record, pointing to the existing file path
         String mimeType;
-        if (outPath.endsWith(".m4a")) {
-            mimeType = "audio/mp4a-latm";
+        if (outPath.endsWith(".wav")) {
+            mimeType = "audio/wav";
         } else if (outPath.endsWith(".wav")) {
             mimeType = "audio/wav";
         } else {
@@ -1456,27 +1501,28 @@ public class RingdroidEditActivity extends Activity
         final Handler handler = new Handler() {
                 public void handleMessage(Message response) {
                     int actionId = response.arg1;
-                    switch (actionId) {
-                    case R.id.button_make_default:
+
+                    if (actionId == R.id.button_make_default){
                         RingtoneManager.setActualDefaultRingtoneUri(
-                            RingdroidEditActivity.this,
-                            RingtoneManager.TYPE_RINGTONE,
-                            newUri);
+                                RingdroidEditActivity.this,
+                                RingtoneManager.TYPE_RINGTONE,
+                                newUri);
                         Toast.makeText(
-                            RingdroidEditActivity.this,
-                            R.string.default_ringtone_success_message,
-                            Toast.LENGTH_SHORT)
-                            .show();
+                                RingdroidEditActivity.this,
+                                R.string.default_ringtone_success_message,
+                                Toast.LENGTH_SHORT)
+                                .show();
                         finish();
-                        break;
-                    case R.id.button_choose_contact:
+
+                    }else if (actionId==R.id.button_choose_contact){
                         chooseContactForRingtone(newUri);
-                        break;
-                    default:
-                    case R.id.button_do_nothing:
+
+                    }else if(actionId==R.id.button_do_nothing){
+
+
                         finish();
-                        break;
                     }
+
                 }
             };
         Message message = Message.obtain(handler);
@@ -1610,4 +1656,50 @@ public class RingdroidEditActivity extends Activity
         e.printStackTrace(new PrintWriter(writer));
         return writer.toString();
     }
+
+    private void moveFile(String inputPath, String inputFile, String outputPath) {
+
+        InputStream in = null;
+        OutputStream out = null;
+        try {
+
+            //create output directory if it doesn't exist
+            File dir = new File (outputPath);
+            if (!dir.exists())
+            {
+                dir.mkdirs();
+            }
+
+
+            in = new FileInputStream(inputPath + inputFile);
+            out = new FileOutputStream(outputPath + inputFile);
+
+            byte[] buffer = new byte[1024];
+            int read;
+            while ((read = in.read(buffer)) != -1) {
+                out.write(buffer, 0, read);
+            }
+            in.close();
+            in = null;
+
+            // write the output file
+            out.flush();
+            out.close();
+            out = null;
+
+            // delete the original file
+            new File(inputPath + inputFile).delete();
+
+
+        }
+
+        catch (FileNotFoundException fnfe1) {
+            Log.e("tag", fnfe1.getMessage());
+        }
+        catch (Exception e) {
+            Log.e("tag", e.getMessage());
+        }
+
+    }
+
 }

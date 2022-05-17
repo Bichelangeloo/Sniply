@@ -10,7 +10,7 @@
     <item name="android:shadowRadius">1</item>
     <item name="android:focusable">true</item>
   </style><style name="ToolbarBackground">
-    <item name="android:background">#222233</item>
+    <item name="android:background">#92ff00</item>
   </style><style name="ChooseContactBackground">
     <item name="android:background">#cc9933</item>
   </style><style name="VerticalDividerForList">
