@@ -1,85 +1,85 @@
 -- Merging decision tree log ---
 manifest
-ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:22:1-70:12
-INJECTED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:22:1-70:12
-INJECTED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:22:1-70:12
+ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:22:1-70:12
+INJECTED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:22:1-70:12
+INJECTED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:22:1-70:12
 	package
-		ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:23:11-34
-		INJECTED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml
-		INJECTED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml
+		ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:23:11-34
+		INJECTED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml
 	android:versionName
-		ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:24:11-38
+		ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:24:11-38
 	xmlns:android
-		ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:22:11-69
+		ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:22:11-69
 	android:versionCode
-		ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:25:11-38
+		ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:25:11-38
 uses-sdk
-ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:27:5-28:46
-INJECTED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:27:5-28:46
-INJECTED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:27:5-28:46
-INJECTED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:27:5-28:46
-INJECTED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:27:5-28:46
+ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:27:5-28:46
+INJECTED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:27:5-28:46
+INJECTED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:27:5-28:46
+INJECTED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:27:5-28:46
+INJECTED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:27:5-28:46
 	android:targetSdkVersion
-		ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:28:15-44
-		INJECTED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml
-		INJECTED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml
+		ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:28:15-44
+		INJECTED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:27:15-41
-		INJECTED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml
-		INJECTED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml
+		ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:27:15-41
+		INJECTED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml
 uses-permission#android.permission.READ_CONTACTS
-ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:30:5-72
+ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:30:5-72
 	android:name
-		ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:30:22-69
+		ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:30:22-69
 uses-permission#android.permission.WRITE_CONTACTS
-ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:31:5-73
+ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:31:5-73
 	android:name
-		ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:31:22-70
+		ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:31:22-70
 uses-permission#android.permission.WRITE_SETTINGS
-ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:32:5-73
+ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:32:5-73
 	android:name
-		ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:32:22-70
+		ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:32:22-70
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:33:5-81
+ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:33:5-81
 	android:name
-		ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:33:22-78
+		ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:33:22-78
 uses-permission#android.permission.RECORD_AUDIO
-ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:34:5-70
+ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:34:5-70
 	android:name
-		ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:34:22-68
+		ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:34:22-68
 supports-screens
-ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:36:5-51
+ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:36:5-51
 	android:anyDensity
-		ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:36:23-48
+		ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:36:23-48
 application
-ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:38:5-68:19
+ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:38:5-68:19
 	android:label
-		ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:38:18-60
+		ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:38:18-60
 	android:largeHeap
-		ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:41:18-42
+		ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:41:18-42
 	android:allowBackup
-		ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:42:18-44
+		ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:42:18-44
 	android:theme
-		ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:40:18-59
+		ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:40:18-59
 activity#com.ringdroid.RingdroidSelectActivity
-ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:46:9-50:20
+ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:46:9-50:20
 	android:label
-		ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:47:19-62
+		ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:47:19-62
 	android:name
-		ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:46:19-57
+		ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:46:19-57
 activity#com.ringdroid.RingdroidEditActivity
-ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:56:9-61:20
+ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:56:9-61:20
 	android:hardwareAccelerated
-		ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:59:19-53
+		ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:59:19-53
 	android:windowSoftInputMode
-		ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:58:19-61
+		ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:58:19-61
 	android:configChanges
-		ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:57:19-80
+		ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:57:19-80
 	android:name
-		ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:56:19-55
+		ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:56:19-55
 activity#com.ringdroid.ChooseContactActivity
-ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:64:9-66:20
+ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:64:9-66:20
 	android:configChanges
-		ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:65:19-69
+		ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:65:19-69
 	android:name
-		ADDED from S:\Projects\AndroidStudio\Sniply\ringdroid\src\main\AndroidManifest.xml:64:19-55
+		ADDED from C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:64:19-55

@@ -23,7 +23,6 @@
         android:padding="9dp" />
 
     <Button
-        android:backgroundTint="@color/black"
         android:id="@+id/listButton"
         android:layout_width="190dp"
         android:layout_height="wrap_content"
@@ -32,6 +31,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="18dp"
         android:layout_marginTop="50dp"
+        android:backgroundTint="@color/black"
         android:text="Zoznamy Skladieb" />
 
     <Button
