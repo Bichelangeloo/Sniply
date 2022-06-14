@@ -32,6 +32,9 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.sniply.R;
+import com.ringdroid.RingdroidEditActivity;
+import com.ringdroid.RingdroidSelectActivity;
+
 import org.xmlpull.v1.XmlPullParser;
 import java.io.File;
 import java.util.ArrayList;
@@ -40,7 +43,7 @@ import java.util.Set;
 
 public class PlayerActivity extends AppCompatActivity {
 
-    Button btnPlay, btnNext, btnPrevious, moznosti,favourites,equalizer;
+    Button btnPlay, btnNext, btnPrevious, moznosti,favourites,equalizer,snip;
     ImageButton btnFastForward,btnFastBackWard;
     TextView txtSongName, txtSongStart, txtSongEnd;
     SeekBar seekMusicBar;
@@ -71,6 +74,7 @@ public class PlayerActivity extends AppCompatActivity {
         moznosti= findViewById(R.id.moznosti);
         favourites=findViewById(R.id.favourite);
         equalizer =findViewById(R.id.equalizerButton);
+        snip= findViewById(R.id.snipButton);
         songList = ListActivity.songList;
         listName = findViewById(R.id.listName);
         listView = findViewById(R.id.listViewPopUp);
@@ -240,6 +244,7 @@ public class PlayerActivity extends AppCompatActivity {
 
                 position = ((position + 1) % mySongs.size());
                 Uri uri1 = Uri.parse(mySongs.get(position).toString());
+                uri=uri1;
                 mediaPlayer = MediaPlayer.create(getApplicationContext(), uri1);
                 songName = mySongs.get(position).getName();
                 txtSongName.setText(songName);
@@ -262,6 +267,7 @@ public class PlayerActivity extends AppCompatActivity {
                 if (position < 0)
                     position = mySongs.size() - 1;
                 Uri uri1 = Uri.parse(mySongs.get(position).toString());
+                uri=uri1;
                 mediaPlayer = MediaPlayer.create(getApplicationContext(), uri1);
                 songName = mySongs.get(position).getName();
                 txtSongName.setText(songName);
@@ -308,6 +314,24 @@ public class PlayerActivity extends AppCompatActivity {
             }
         });
 
+        equalizer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                equalizer();
+
+            }
+        });
+
+        snip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                snip();
+
+            }
+        });
+
         pocetPrehrani = sh.getInt(mySongs.get(position).getName(),0);
 
         myEdit.putInt(mySongs.get(position).getName(),pocetPrehrani+1);
@@ -320,10 +344,22 @@ public class PlayerActivity extends AppCompatActivity {
 
     }
 
+    private void snip(){
+
+            Intent intentSnip = new Intent(this, RingdroidEditActivity.class);
+            intentSnip.putExtra("was_get_content_intent",true);
+            intentSnip.setData(uri);
+
+            startActivity(intentSnip);
+
+    }
+
 
     private void  equalizer(){
 
+            Intent equalizerIntent = new Intent(this,EqualizerActivity.class);
 
+            startActivity(equalizerIntent);
 
 
     }

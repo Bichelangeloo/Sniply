@@ -61,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
         //pridelenie adresy android materialov
         listView = (ListView) findViewById(R.id.ListView);
         listButton = findViewById(R.id.listButton);
@@ -102,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
     //metoda na poziadanie pristupu k externemu ulozisku
     public void runTimePermission() {
         Dexter.withContext(getApplicationContext())
-                .withPermissions(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO)
+                .withPermissions(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO,Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_CONTACTS,Manifest.permission.WRITE_CONTACTS)
                 .withListener(new MultiplePermissionsListener() {
                     @Override
                     public void onPermissionsChecked(MultiplePermissionsReport multiplePermissionsReport) {
@@ -219,5 +221,8 @@ try {
             return view;
         }
     }
+
+
+
 
 }

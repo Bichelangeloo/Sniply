@@ -2,7 +2,8 @@ pluginManagement {
     repositories {
         gradlePluginPortal()
         google()
-        mavenCentral()
+
+        jcenter() // Warning: this repository is going to shut down soon
     }
 }
 dependencyResolutionManagement {
@@ -10,7 +11,15 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url 'https://www.jitpack.io' } // this is the line to be added
     }
 }
+
+
+
+
 rootProject.name = "Sniply"
 include ':app'
+include ':android_Audio_Cuttermaster'
+include ':android_Audio_Cuttermaster'
+include ':ringdroid'
