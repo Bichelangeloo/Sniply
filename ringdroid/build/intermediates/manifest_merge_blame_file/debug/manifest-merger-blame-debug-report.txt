@@ -24,50 +24,50 @@
 24    android:versionName="2.7.4" >
 25
 26    <uses-sdk
-26-->C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:27:5-28:46
+26-->C:\School\PMA\Sniply\ringdroid\src\main\AndroidManifest.xml:26:5-27:46
 27        android:minSdkVersion="1"
-27-->C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:27:15-41
+27-->C:\School\PMA\Sniply\ringdroid\src\main\AndroidManifest.xml:26:15-41
 28        android:targetSdkVersion="1" />
-28-->C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:28:15-44
+28-->C:\School\PMA\Sniply\ringdroid\src\main\AndroidManifest.xml:27:15-44
 29
 30    <uses-permission android:name="android.permission.READ_CONTACTS" />
-30-->C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:30:5-72
-30-->C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:30:22-69
+30-->C:\School\PMA\Sniply\ringdroid\src\main\AndroidManifest.xml:29:5-72
+30-->C:\School\PMA\Sniply\ringdroid\src\main\AndroidManifest.xml:29:22-69
 31    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
-31-->C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:31:5-73
-31-->C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:31:22-70
+31-->C:\School\PMA\Sniply\ringdroid\src\main\AndroidManifest.xml:30:5-73
+31-->C:\School\PMA\Sniply\ringdroid\src\main\AndroidManifest.xml:30:22-70
 32    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-32-->C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:32:5-73
-32-->C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:32:22-70
+32-->C:\School\PMA\Sniply\ringdroid\src\main\AndroidManifest.xml:31:5-73
+32-->C:\School\PMA\Sniply\ringdroid\src\main\AndroidManifest.xml:31:22-70
 33    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-33-->C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:33:5-81
-33-->C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:33:22-78
+33-->C:\School\PMA\Sniply\ringdroid\src\main\AndroidManifest.xml:32:5-81
+33-->C:\School\PMA\Sniply\ringdroid\src\main\AndroidManifest.xml:32:22-78
 34    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-34-->C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:34:5-70
-34-->C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:34:22-68
+34-->C:\School\PMA\Sniply\ringdroid\src\main\AndroidManifest.xml:33:5-70
+34-->C:\School\PMA\Sniply\ringdroid\src\main\AndroidManifest.xml:33:22-68
 35
 36    <supports-screens android:anyDensity="true" />
-36-->C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:36:5-51
-36-->C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:36:23-48
+36-->C:\School\PMA\Sniply\ringdroid\src\main\AndroidManifest.xml:35:5-51
+36-->C:\School\PMA\Sniply\ringdroid\src\main\AndroidManifest.xml:35:23-48
 37
 38    <application
-38-->C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:38:5-68:19
+38-->C:\School\PMA\Sniply\ringdroid\src\main\AndroidManifest.xml:37:5-67:19
 39        android:allowBackup="true"
-39-->C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:42:18-44
+39-->C:\School\PMA\Sniply\ringdroid\src\main\AndroidManifest.xml:41:18-44
 40        android:label="@string/ringdroid_app_name"
-40-->C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:38:18-60
+40-->C:\School\PMA\Sniply\ringdroid\src\main\AndroidManifest.xml:37:18-60
 41        android:largeHeap="true"
-41-->C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:41:18-42
+41-->C:\School\PMA\Sniply\ringdroid\src\main\AndroidManifest.xml:40:18-42
 42        android:theme="@android:style/Theme.Holo" >
-42-->C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:40:18-59
+42-->C:\School\PMA\Sniply\ringdroid\src\main\AndroidManifest.xml:39:18-59
 43
 44        <!-- Main activity that's launched when the user opens Ringdroid. -->
 45        <activity
-45-->C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:46:9-50:20
+45-->C:\School\PMA\Sniply\ringdroid\src\main\AndroidManifest.xml:45:9-49:20
 46            android:name="com.ringdroid.RingdroidSelectActivity"
-46-->C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:46:19-57
+46-->C:\School\PMA\Sniply\ringdroid\src\main\AndroidManifest.xml:45:19-57
 47            android:label="@string/main_activity_label" >
-47-->C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:47:19-62
+47-->C:\School\PMA\Sniply\ringdroid\src\main\AndroidManifest.xml:46:19-62
 48        </activity>
 49
 50        <!--
@@ -77,24 +77,24 @@
 54             file.
 55        -->
 56        <activity
-56-->C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:56:9-61:20
+56-->C:\School\PMA\Sniply\ringdroid\src\main\AndroidManifest.xml:55:9-60:20
 57            android:name="com.ringdroid.RingdroidEditActivity"
-57-->C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:56:19-55
+57-->C:\School\PMA\Sniply\ringdroid\src\main\AndroidManifest.xml:55:19-55
 58            android:configChanges="orientation|screenSize|keyboardHidden"
-58-->C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:57:19-80
+58-->C:\School\PMA\Sniply\ringdroid\src\main\AndroidManifest.xml:56:19-80
 59            android:hardwareAccelerated="true"
-59-->C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:59:19-53
+59-->C:\School\PMA\Sniply\ringdroid\src\main\AndroidManifest.xml:58:19-53
 60            android:windowSoftInputMode="adjustResize" >
-60-->C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:58:19-61
+60-->C:\School\PMA\Sniply\ringdroid\src\main\AndroidManifest.xml:57:19-61
 61        </activity>
 62
 63        <!-- Activity for choosing a contact to assign a ringtone to. -->
 64        <activity
-64-->C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:64:9-66:20
+64-->C:\School\PMA\Sniply\ringdroid\src\main\AndroidManifest.xml:63:9-65:20
 65            android:name="com.ringdroid.ChooseContactActivity"
-65-->C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:64:19-55
+65-->C:\School\PMA\Sniply\ringdroid\src\main\AndroidManifest.xml:63:19-55
 66            android:configChanges="orientation|keyboardHidden" >
-66-->C:\Users\petol\AndroidStudioProjects\Sniply\ringdroid\src\main\AndroidManifest.xml:65:19-69
+66-->C:\School\PMA\Sniply\ringdroid\src\main\AndroidManifest.xml:64:19-69
 67        </activity>
 68    </application>
 69
