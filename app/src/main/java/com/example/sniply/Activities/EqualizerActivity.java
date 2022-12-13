@@ -1,5 +1,7 @@
 package com.example.sniply.Activities;
 
+import static com.example.sniply.Activities.PlayerActivity.mediaPlayer;
+
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -13,16 +15,13 @@ import com.example.sniply.R;
 public class EqualizerActivity extends AppCompatActivity {
 
 
-    MediaPlayer mediaPlayer;
+
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.equalizer_layout);
-
-
-            mediaPlayer=PlayerActivity.mediaPlayer;
 
         int sessionId = mediaPlayer.getAudioSessionId();
         mediaPlayer.setLooping(true);
@@ -35,4 +34,28 @@ public class EqualizerActivity extends AppCompatActivity {
                 .commit();
 
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+
+
+        System.out.println("EQUALIZER PAUSED");
+
+
+
+
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        System.out.println("EQUALIZER DESTROYED");
+
+    }
+
+
 }

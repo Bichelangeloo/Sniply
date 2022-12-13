@@ -37,4 +37,6 @@ public class StartActivity extends AppCompatActivity {
         };
         thread.start();
     }
+
+
 }

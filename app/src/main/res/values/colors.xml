@@ -10,6 +10,11 @@
     <color name="white">#FFFFFFFF</color>
     <color name="lime">#aef203</color>>
     <color name="lime_dark">#92ff00</color>
+    <color name="primaryColor">#F44336</color>
+    <color name="textColor">#ffffff</color>
+    <color name="playingCardColor">#7a221b</color>
+    <color name="primaryDarkColor">#7A221B</color>
+    <color name="secondaryColor">#f44336</color>
 
 
 </resources>

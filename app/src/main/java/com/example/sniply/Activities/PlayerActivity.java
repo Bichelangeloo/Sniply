@@ -2,6 +2,8 @@ package com.example.sniply.Activities;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
@@ -31,6 +33,8 @@ import android.widget.PopupWindow;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.bullhead.equalizer.DialogEqualizerFragment;
 import com.example.sniply.R;
 import com.ringdroid.RingdroidEditActivity;
 import com.ringdroid.RingdroidSelectActivity;
@@ -52,7 +56,7 @@ public class PlayerActivity extends AppCompatActivity {
     TextView listName;
     String songName;
     public static final String EXTRA_NAME = "song_name";
-    static MediaPlayer mediaPlayer;
+    public static MediaPlayer mediaPlayer;
     int position;
     ArrayList<File> mySongs;
     LinkedHashMap<String,ArrayList<File>> songList;
@@ -357,9 +361,20 @@ public class PlayerActivity extends AppCompatActivity {
 
     private void  equalizer(){
 
-            Intent equalizerIntent = new Intent(this,EqualizerActivity.class);
+        int sessionId = mediaPlayer.getAudioSessionId();
 
-            startActivity(equalizerIntent);
+
+        DialogEqualizerFragment fragment = DialogEqualizerFragment.newBuilder()
+                .setAudioSessionId(sessionId)
+                .themeColor(ContextCompat.getColor(this, R.color.primaryColor))
+                .textColor(ContextCompat.getColor(this, R.color.textColor))
+                .accentAlpha(ContextCompat.getColor(this, R.color.playingCardColor))
+                .darkColor(ContextCompat.getColor(this, R.color.primaryDarkColor))
+                .setAccentColor(ContextCompat.getColor(this, R.color.secondaryColor))
+                .build();
+        fragment.show(getSupportFragmentManager(), "eq");
+
+
 
 
     }
